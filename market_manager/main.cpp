@@ -31,6 +31,7 @@ int main() {
     vector<Account> accountList;
     Stock stock = *new Stock();
 
+    loginScreen:
     while (!logged) {
         loginMenu();
         int option;
@@ -83,9 +84,12 @@ int main() {
                     }
                 }
                 cout << "Invalid login" << endl;
+                break;
             }
         }
     }
+
+
 
 
 
