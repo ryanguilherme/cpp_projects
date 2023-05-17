@@ -10,7 +10,7 @@ void loginMenu() {
 
     cout << "\n"
             "+--------------------+\n"
-            "|       LOGIN        |\n"
+            "|   MARKET MANAGER   |\n"
             "+--------------------+\n"
             "| 1 - Create Account |\n"
             "| 2 - LOGIN          |\n"
@@ -18,24 +18,35 @@ void loginMenu() {
             "";
 }
 
-//void menu() {
-//
-//
-//
-//}
+void menu() {
+
+    cout << "\n"
+            "+-----------------+\n"
+            "|      MENU       |\n"
+            "+-----------------+\n"
+            "| 1 - Add Item    |\n"
+            "| 2 - Remove Item |\n"
+            "| 3 - List Items  |\n"
+            "| 4 - Stock       |\n"
+            "| 0 - Exit        |\n"
+            "+-----------------+\n"
+            "";
+
+}
 
 int main() {
 
     bool running = true;
     bool logged = false;
+    vector<Item> itemList;
     vector<Account> accountList;
     Stock stock = *new Stock();
 
     loginScreen:
-    while (!logged) {
+    while ( !logged ) {
         loginMenu();
         int option;
-        cout << "type: ";
+        cout << "choose an option: ";
         cin >> option;
 
         if ( option == 1 ) {
@@ -75,7 +86,7 @@ int main() {
                     cout << "Password: ";
                     cin >> password;
                     if ( account.getPassword() == password ) {
-                        cout << "Login successfull" << endl;
+                        cout << "Login successfully" << endl;
                         logged = true;
                         break;
                     } else {
@@ -88,7 +99,70 @@ int main() {
             }
         }
     }
+    // principal menu
+    while ( logged ) {
+        menu();
+        int option;
+        cout << "choose an option: ";
+        cin >> option;
 
+        // add item
+        if ( option == 1 ) {
+            string itemName;
+            cout << "Item Name: ";
+            cin >> itemName;
+            bool validItem = true;
+            for ( auto item : itemList) {
+                if ( item.getName() == itemName ) {
+                    validItem = false;
+                    cout << "Item already exists" << endl;
+                    break;
+                }
+            }
+            if ( validItem ) {
+                double itemPrice, itemWeight;
+                cout << "Price: ";
+                cin >> itemPrice;
+                cout << "Weight: ";
+                cin >> itemWeight;
+                // add new item to items vector
+                itemList.emplace_back( itemName, itemPrice, itemWeight );
+                cout << "Item successfully added" << endl;
+            }
+        }
+
+        if ( option == 2 ) {
+            if ( itemList.empty() ) {
+                cout << "No item to remove!" << endl;
+            } else {
+                int itemIndex = 0;
+                cout << "\n"
+                        "+--------------+\n"
+                        "|     ITEM     |\n"
+                        "+--------------+\n"
+                        "\n"
+                        "";
+                for (auto item: itemList) {
+                    cout << "|" << itemIndex << "." << item.getName();
+                    itemIndex++;
+                }
+                cout << "+--------------+" << endl;
+                cout << "Type a item number to remove: ";
+                int itemIndexToRemove;
+                cin >> itemIndexToRemove;
+
+                // check if the item index is valid, if is, remove
+                if ( itemIndexToRemove >= 0 && itemIndexToRemove < itemList.size() ) {
+                    itemList.erase( itemList.begin() + itemIndexToRemove );
+                    cout << "Item successfully removed" << endl;
+                } else {
+                    cout << "error: Invalid item number" << endl;
+                }
+            }
+        }
+
+
+    }
 
 
 
