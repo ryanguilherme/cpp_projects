@@ -19,6 +19,8 @@ public:
     Item(std::string name, double price, double weight);
     bool changePrice(double price);
     std::string getName();
+    double getPrice();
+    double getWeight();
 
 };
 
@@ -48,5 +50,19 @@ std::string Item::getName() {
     return this->name;
 
 }
+
+double Item::getPrice() {
+
+    return this->price;
+
+}
+
+double Item::getWeight() {
+
+    return this->weight;
+
+}
+
+
 
 #endif //ITEM_H

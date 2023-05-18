@@ -2,7 +2,10 @@
 #include "Account.h"
 #include "Item.h"
 #include "Stock.h"
+#include "MainFunctions.h"
 #include <vector>
+#include <iomanip>
+
 
 using namespace std;
 
@@ -132,33 +135,19 @@ int main() {
         }
 
         if ( option == 2 ) {
-            if ( itemList.empty() ) {
-                cout << "No item to remove!" << endl;
-            } else {
-                int itemIndex = 0;
-                cout << "\n"
-                        "+--------------+\n"
-                        "|     ITEM     |\n"
-                        "+--------------+\n"
-                        "\n"
-                        "";
-                for (auto item: itemList) {
-                    cout << "|" << itemIndex << "." << item.getName();
-                    itemIndex++;
-                }
-                cout << "+--------------+" << endl;
-                cout << "Type a item number to remove: ";
-                int itemIndexToRemove;
-                cin >> itemIndexToRemove;
 
-                // check if the item index is valid, if is, remove
-                if ( itemIndexToRemove >= 0 && itemIndexToRemove < itemList.size() ) {
-                    itemList.erase( itemList.begin() + itemIndexToRemove );
-                    cout << "Item successfully removed" << endl;
-                } else {
-                    cout << "error: Invalid item number" << endl;
-                }
-            }
+            removeItem( &itemList );
+
+        }
+
+        if ( option == 3) {
+
+            listItems( itemList );
+
+        }
+
+        if ( option == 4 ) {
+            
         }
 
 
