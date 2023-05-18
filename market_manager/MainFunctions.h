@@ -9,6 +9,35 @@
 #ifndef MARKET_MANAGER_MAINFUNCTIONS_H
 #define MARKET_MANAGER_MAINFUNCTIONS_H
 
+void loginMenu() {
+
+    std::cout << "\n"
+            "+--------------------+\n"
+            "|   MARKET MANAGER   |\n"
+            "+--------------------+\n"
+            "| 1 - Create Account |\n"
+            "| 2 - LOGIN          |\n"
+            "| 0 - Exit           |\n"
+            "+--------------------+\n"
+            "";
+}
+
+void menu() {
+
+    std::cout << "\n"
+            "+-----------------+\n"
+            "|      MENU       |\n"
+            "+-----------------+\n"
+            "| 1 - Add Item    |\n"
+            "| 2 - Remove Item |\n"
+            "| 3 - List Items  |\n"
+            "| 4 - Stock       |\n"
+            "| 0 - Exit        |\n"
+            "+-----------------+\n"
+            "";
+
+}
+
 void accountMenu( bool *logged, std::vector<Account> *accountList ) {
     int option;
     std::cout << "Choose an option: ";
@@ -28,10 +57,8 @@ void accountMenu( bool *logged, std::vector<Account> *accountList ) {
                     break;
                 }
             }
-            if ( loginExists ) {
-                loginExists = false;
-                continue;
-            }
+            if ( loginExists ) { continue; }
+
             std::string password;
             std::cout << "Password: ";
             std::cin >> password;
@@ -71,6 +98,7 @@ void accountMenu( bool *logged, std::vector<Account> *accountList ) {
         std::cout << std::endl << "Thank you for using Market Manager" << std::endl << "Exiting..." << std::endl;
         exit(0);
     } else {
+        system("clear");
         std::cout << std::endl << "error: Invalid option!" << std::endl;
     }
 }
@@ -83,6 +111,7 @@ void addItem( std::vector<Item> *itemList ) {
     for ( auto item : *itemList) {
         if ( item.getName() == itemName ) {
             validItem = false;
+            system("clear");
             std::cout << "Item already exists" << std::endl;
             break;
         }
@@ -95,14 +124,17 @@ void addItem( std::vector<Item> *itemList ) {
         std::cin >> itemWeight;
         // add new item to items vector
         itemList->emplace_back( itemName, itemPrice, itemWeight );
-        std::cout << "Item successfully added" << std::endl;
+        system("clear");
+        std::cout << std::endl << "Item successfully added" << std::endl;
     }
 }
 
 void removeItem( std::vector<Item> *itemList ) {
     if ( itemList->empty() ) {
-        std::cout << "No item to remove!" << std::endl;
+        system("clear");
+        std::cout << std::endl << "No item to remove!" << std::endl;
     } else {
+        system("clear");
         int itemIndex = 0;
         std::cout << "\n"
                      "+----------------------------------+\n"
@@ -119,15 +151,17 @@ void removeItem( std::vector<Item> *itemList ) {
             itemIndex++;
         }
         std::cout << "+----------------------------------+" << std::endl;
-        std::cout << "| Type a item number to remove: ";
+        std::cout << "Type a item number to remove: ";
         int itemIndexToRemove;
         std::cin >> itemIndexToRemove;
 
         // check if the item index is valid, if is, remove
         if ( itemIndexToRemove >= 0 && itemIndexToRemove < itemList->size() ) {
             itemList->erase( itemList->begin() + itemIndexToRemove );
+            system("clear");
             std::cout << "Item successfully removed" << std::endl;
         } else {
+            system("clear");
             std::cout << "error: Invalid item number" << std::endl;
         }
     }
@@ -137,8 +171,10 @@ void removeItem( std::vector<Item> *itemList ) {
 // option 3
 void listItems( const std::vector<Item>& itemList ) {
     if ( itemList.empty() ) {
+        system("clear");
         std::cout << "No item to list" << std::endl;
     } else {
+        system("clear");
         std::cout << "\n"
                 "+----------------------------------+---------+----------+\n"
                 "|               ITEM               |  PRICE  |  WEIGHT  |\n"

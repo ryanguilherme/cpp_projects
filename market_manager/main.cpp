@@ -4,39 +4,8 @@
 #include "Stock.h"
 #include "MainFunctions.h"
 #include <vector>
-#include <iomanip>
-
 
 using namespace std;
-
-void loginMenu() {
-
-    cout << "\n"
-            "+--------------------+\n"
-            "|   MARKET MANAGER   |\n"
-            "+--------------------+\n"
-            "| 1 - Create Account |\n"
-            "| 2 - LOGIN          |\n"
-            "| 0 - Exit           |\n"
-            "+--------------------+\n"
-            "";
-}
-
-void menu() {
-
-    cout << "\n"
-            "+-----------------+\n"
-            "|      MENU       |\n"
-            "+-----------------+\n"
-            "| 1 - Add Item    |\n"
-            "| 2 - Remove Item |\n"
-            "| 3 - List Items  |\n"
-            "| 4 - Stock       |\n"
-            "| 0 - Exit        |\n"
-            "+-----------------+\n"
-            "";
-
-}
 
 int main() {
 
@@ -56,7 +25,7 @@ int main() {
     while ( logged ) {
         menu();
         int option;
-        cout << "| Choose an option: ";
+        cout << "Choose an option: ";
         cin >> option;
 
         // add item
@@ -75,6 +44,8 @@ int main() {
 
         if ( option == 0 ) {
             logged = false;
+            system("clear");
+            cout << "Logging off..." << std::endl;
             goto loginScreen;
         }
 
