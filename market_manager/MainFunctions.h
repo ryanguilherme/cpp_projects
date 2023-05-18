@@ -201,4 +201,18 @@ void listItems( const std::vector<Item>& itemList ) {
     }
 }
 
+void showStock( Stock *stock ) {
+    if (stock->getSize() == 0 ) {
+        system("clear");
+        std::cout << "Empty stock" << std::endl;
+    } else {
+        std::cout << "\n"
+                     "+---+----------------------------------+---------+----------+----------------+\n"
+                     "|   |              ITEM                |  PRICE  |  WEIGHT  |     VOLUME     |\n"
+                     "+---+----------------------------------+---------+----------+----------------+\n"
+                     "" << std::endl;
+        
+    }
+}
+
 #endif //MARKET_MANAGER_MAINFUNCTIONS_H
