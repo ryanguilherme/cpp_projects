@@ -19,7 +19,9 @@ public:
 
     int getSize();
     bool addItem(Item item);
-    bool removeItem(std::string itemName);
+    bool removeItem(const std::string& itemName);
+    std::map<std::string, Item> getStockItems();
+    std::map<std::string, int> getStockItemsVolume();
 
 };
 
@@ -45,15 +47,15 @@ bool Stock::addItem(Item item) {
         return true;
     }
 
-    return false;
 
 }
 
-bool Stock::removeItem(std::string itemName) {
+bool Stock::removeItem(const std::string& itemName) {
 
     auto iterator = items.find(itemName);
     if (iterator != items.end()) {
         // there is this item to remove
+        std::cout << "Item successfully decreased" << std::endl;
         countItems[itemName]--;
         this->size--;
         // now we need to check if this was the last item of this name on the stock
@@ -65,7 +67,20 @@ bool Stock::removeItem(std::string itemName) {
         return true;
     }
 
+    std::cout << "This item is not on Stock" << std::endl;
     return false;
+
+}
+
+std::map<std::string, Item> Stock::getStockItems() {
+
+    return this->items;
+
+}
+
+std::map<std::string, int> Stock::getStockItemsVolume() {
+
+    return this->countItems;
 
 }
 

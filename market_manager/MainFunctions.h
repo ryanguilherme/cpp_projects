@@ -103,6 +103,19 @@ void accountMenu( bool *logged, std::vector<Account> *accountList ) {
     }
 }
 
+void stockMenu() {
+    std::cout << "\n"
+                 "+--------+------------------------+\n"
+                 "| OPTION |       STOCK MENU       |\n"
+                 "+--------+------------------------+\n"
+                 "|   1.   | INCREASE ITEM STOCK    |\n"
+                 "|   2.   | DECREASE ITEM STOCK    |\n"
+                 "|   3.   | SHOW STOCK             |\n"
+                 "|   0.   | EXIT                   |\n"
+                 "+--------+------------------------+\n"
+                 "";
+}
+
 void addItem( std::vector<Item> *itemList ) {
     std::string itemName;
     std::cout << "Item Name: ";
@@ -201,6 +214,7 @@ void listItems( const std::vector<Item>& itemList ) {
     }
 }
 
+//option 4
 void showStock( Stock *stock ) {
     if (stock->getSize() == 0 ) {
         system("clear");
@@ -210,8 +224,29 @@ void showStock( Stock *stock ) {
                      "+---+----------------------------------+---------+----------+----------------+\n"
                      "|   |              ITEM                |  PRICE  |  WEIGHT  |     VOLUME     |\n"
                      "+---+----------------------------------+---------+----------+----------------+\n"
-                     "" << std::endl;
-        
+                     "";
+        for ( auto item : stock->getStockItems() ) {
+            std::cout << "|   | " <<  item.first;
+            for ( int i = 0; i < (33 - item.first.size()); i++ ) {
+                std::cout << " ";
+            }
+            std::cout << "| ";
+            std::cout << std::fixed << std::setprecision(2) << item.second.getPrice();
+            for ( int i = 0; i < (9 - std::to_string(item.second.getPrice()).size() + 3); i++ ) {
+                std::cout << " ";
+            }
+            std::cout << "| ";
+            std::cout << std::fixed << std::setprecision(2) << item.second.getWeight();
+            for ( int i = 0; i < (10 - std::to_string(item.second.getWeight()).size() + 3); i++ ) {
+                std::cout << " ";
+            }
+            std::cout << "| ";
+            std::cout << std::fixed << std::setprecision(2) << stock->getStockItemsVolume()[item.second.getName()];
+            for ( int i = 0; i < (17 - std::to_string(stock->getStockItemsVolume()[item.second.getName()]).size() - 2); i++) {
+                std::cout << " ";
+            }
+            std::cout << "|" << std::endl << "+---+----------------------------------+---------+----------+----------------+" << std::endl;
+        }
     }
 }
 
