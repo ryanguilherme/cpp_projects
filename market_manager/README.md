@@ -6,6 +6,16 @@
 
 ![demo video](media/market_manager_demo.mp4)
 
+## install and execute (linux)
+### Only shell is required to run
+### Download project files and start application:
+```bash
+git clone https://github.com/ryanguilherme/cpp_projects.git
+cd cpp_projects/market_manager/cmake-build-debug/
+./market_manager
+```
+<hr>
+
 ## login screen
 ![login screen](media/loginScreen.png)
 ### first screen shown after start
