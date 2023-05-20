@@ -58,11 +58,9 @@ int main() {
                         cin >> itemVolume;
                         for ( auto item : itemList ) {
                             if ( itemName == item.getName() ) {
-                                for ( int i = 0; i < itemVolume; i++ ) {
-                                    stock.addItem(item);
-                                    added = true;
-                                    system("clear");
-                                }
+                                stock.addItem(item, itemVolume);
+                                added = true;
+                                system("clear");
                                 cout << "Item successfully increased on stock" << endl;
                                 break;
                             }
@@ -89,9 +87,7 @@ int main() {
                                     cout << "There is not enough volume to remove" << endl;
                                     break;
                                 } else {
-                                    for ( int i = 0; i < itemVolume; i++ ) {
-                                        stock.removeItem(itemName);
-                                    }
+                                    stock.removeItem( itemName, itemVolume );
                                     cout << "Item volume successfully decreased" << endl;
                                     break;
                                 }

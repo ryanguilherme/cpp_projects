@@ -18,8 +18,8 @@ private:
 public:
 
     int getSize();
-    bool addItem(Item item);
-    bool removeItem(const std::string& itemName);
+    bool addItem( Item item, int volume );
+    bool removeItem( const std::string& itemName, int volume );
     std::map<std::string, Item> getStockItems();
     std::map<std::string, int> getStockItemsVolume();
 
@@ -31,32 +31,32 @@ int Stock::getSize() {
 
 }
 
-bool Stock::addItem(Item item) {
+bool Stock::addItem( Item item, int volume ) {
 
     auto iterator = items.find(item.getName());
     if (iterator != items.end()) {
         // stock already have this item, so lets just increment the counter
-        countItems[item.getName()]++;
-        this->size++;
+        countItems[item.getName()] += volume;
+        this->size += volume;
         return true;
     } else {
         // this item is not on the stock, then add and start the counter
         items[item.getName()] = item;
-        countItems[item.getName()] = 1;
-        this->size++;
+        countItems[item.getName()] = volume;
+        this->size += volume;
         return true;
     }
 
 
 }
 
-bool Stock::removeItem(const std::string& itemName) {
+bool Stock::removeItem( const std::string& itemName, int volume ) {
 
     auto iterator = items.find(itemName);
     if (iterator != items.end()) {
         // there is this item to remove
-        countItems[itemName]--;
-        this->size--;
+        countItems[itemName] -= volume;
+        this->size -= volume;
         // now we need to check if this was the last item of this name on the stock
         if (countItems[itemName] == 0) {
             // so that was the last, then we need to completely erase this from the stock
