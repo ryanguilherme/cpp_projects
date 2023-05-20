@@ -16,34 +16,35 @@ cd cpp_projects/market_manager/cmake-build-debug/
 ```
 <hr>
 
-## login screen
+## **Login Screen**
 ![login screen](media/loginScreen.png)
 ### first screen shown after start
-* option 1: Create Account -> asks for a login and password with no requirements, check if the login already exists, if not, create successfully.
-* option 2: LOGIN -> asks for a login and password, first check if the login exists, if exists, check if the password is correct and then authenticate.
-* option 0: Exit -> print "Thank you for using market manger" "Exiting..." and then close the application.
+* option 1: _Create Account_ -> asks for a login and password with no requirements, check if the login already exists, if not, create successfully.
+* option 2: _LOGIN_ -> asks for a login and password, first check if the login exists, if exists, check if the password is correct and then authenticate.
+* option 0: _Exit_ -> print "Thank you for using market manager" "Exiting..." and then close the application.
 <hr>
 
-## main menu
+## **Main Menu**
 ![menu screen](media/mainMenu.png)
-### first screen shown after login
-* option 1: Add Item -> asks for a item name, price and weight. Check if already exists a item if this name, if not, create successfully.
-* option 2: Remove Item -> ask only for a item name, if exists, remove the item.
-* option 3: List Items -> shows a table with every item registered, with correspondent price and weight (example with a rice and gas item registered):
+### First screen shown after login
+* option 1: _Add Item_ -> asks for a item name, price and weight. Check if already exists a item if this name, if not, create successfully.
+* option 2: _Remove Item_ -> ask only for a item name, if exists, remove the item.
+* option 3: _List Items_ -> shows a table with every item registered, with correspondent price and weight (example with a rice and gas item registered)
+
 ![list items example](media/itemListScreen.png)
-* option 4: go to Stock menu.
-* option 0: LogOff and go back to login screen.
+* option 4: _Stock_ -> go to Stock menu.
+* option 0: _Exit_ -> LogOff and go back to login screen.
 <hr>
 
-## stock menu
+## **Stock Menu**
 ![stock menu](media/stockMenuScreen.png)
-### stock menu screen, shown after choose main menu option 4 (show stock)
-* option 1: INCREASE ITEM STOCK -> list every item registered like on main menu option 3, and then ask the user to choose a item and a volume to add to the stock
-* option 2: DECREASE ITEM STOCK -> show the stock volume and ask for a item and volume to reduce, the item have to be added in the option 1 before
-* option 3: SHOW STOCK -> show the stock screen with item name, price, weight and volume (example with 450 gas and 7600 rices)
+### Stock menu screen, shown after choose **Main menu** option 4 (show stock)
+* option 1: _INCREASE ITEM STOCK- -> list every item registered like on main menu option 3, and then ask the user to choose a item and a volume to add to the stock
+* option 2: _DECREASE ITEM STOCK_ -> show the stock volume and ask for a item and volume to reduce, the item have to be added in the option 1 before
+* option 3: _SHOW STOCK_ -> show the stock screen with item name, price, weight and volume (example with 450 gas and 7600 rices)
 
 ![show stock screen](media/showStockScreen.png)
-* option 0: EXIT -> exit from stock menu and go back to main menu
+* option 0: _EXIT_ -> exit from stock menu and go back to main menu
 <hr>
 
 ### **TO DO**
