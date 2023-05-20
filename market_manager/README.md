@@ -31,7 +31,8 @@
 * option 1: INCREASE ITEM STOCK -> list every item registered like on main menu option 3, and then ask the user to choose a item and a volume to add to the stock
 * option 2: DECREASE ITEM STOCK -> show the stock volume and ask for a item and volume to reduce, the item have to be added in the option 1 before
 * option 3: SHOW STOCK -> show the stock screen with item name, price, weight and volume (example with 450 gas and 7600 rices)
-[show stock screen](media/showStockScreen.png)
+
+![show stock screen](media/showStockScreen.png)
 * option 0: EXIT -> exit from stock menu and go back to main menu
 <hr>
 
