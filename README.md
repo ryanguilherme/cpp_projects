@@ -10,8 +10,8 @@
 ### Only shell is required to run
 ### Download project files and start application:
 ```bash
-git clone https://github.com/ryanguilherme/cpp_projects.git
-cd cpp_projects/market_manager/cmake-build-debug/
+git clone https://github.com/ryanguilherme/market_manager.git
+cd market_manager/cmake-build-debug/
 ./market_manager
 ```
 <hr>
