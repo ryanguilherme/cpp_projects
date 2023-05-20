@@ -55,7 +55,6 @@ bool Stock::removeItem(const std::string& itemName) {
     auto iterator = items.find(itemName);
     if (iterator != items.end()) {
         // there is this item to remove
-        std::cout << "Item successfully decreased" << std::endl;
         countItems[itemName]--;
         this->size--;
         // now we need to check if this was the last item of this name on the stock

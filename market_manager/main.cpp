@@ -53,11 +53,16 @@ int main() {
                         cout << "Type an item name to add: ";
                         cin >> itemName;
                         bool added = false;
+                        int itemVolume;
+                        cout << "Type the volume you want to add: ";
+                        cin >> itemVolume;
                         for ( auto item : itemList ) {
                             if ( itemName == item.getName() ) {
-                                stock.addItem(item);
-                                added = true;
-                                system("clear");
+                                for ( int i = 0; i < itemVolume; i++ ) {
+                                    stock.addItem(item);
+                                    added = true;
+                                    system("clear");
+                                }
                                 cout << "Item successfully increased on stock" << endl;
                                 break;
                             }
@@ -69,16 +74,27 @@ int main() {
                     }
                 }
                 else if ( stockOption == 2 ) {
-                    listItems( itemList );
+                    showStock( &stock );
                     if ( !itemList.empty() ) {
                         cout << "Available items to remove" << endl;
                         string itemName;
                         cout << "Type an item name to remove: ";
                         cin >> itemName;
+                        int itemVolume;
+                        cout << "Type the volume to remove: ";
+                        cin >> itemVolume;
                         for ( auto item : itemList ) {
                             if ( itemName == item.getName() ) {
-                                stock.removeItem( itemName );
-                                break;
+                                if ( stock.getStockItemsVolume()[itemName] < itemVolume ) {
+                                    cout << "There is not enough volume to remove" << endl;
+                                    break;
+                                } else {
+                                    for ( int i = 0; i < itemVolume; i++ ) {
+                                        stock.removeItem(itemName);
+                                    }
+                                    cout << "Item volume successfully decreased" << endl;
+                                    break;
+                                }
                             }
                         }
                     }
