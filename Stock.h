@@ -7,7 +7,6 @@
 #ifndef MARKET_MANAGER_STOCK_H
 #define MARKET_MANAGER_STOCK_H
 
-
 class Stock {
 
 private:

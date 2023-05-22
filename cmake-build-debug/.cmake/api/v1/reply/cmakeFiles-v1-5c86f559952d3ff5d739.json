@@ -49,21 +49,6 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/ryan/Downloads/CLion-2023.1.2/clion-2023.1.2/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeFindCodeBlocks.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/home/ryan/Downloads/CLion-2023.1.2/clion-2023.1.2/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/home/ryan/Downloads/CLion-2023.1.2/clion-2023.1.2/bin/cmake/linux/x64/share/cmake-3.25/Modules/ProcessorCount.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
 			"path" : "/home/ryan/Downloads/CLion-2023.1.2/clion-2023.1.2/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeCInformation.cmake"
 		},
 		{
@@ -140,8 +125,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/ryan/Documents/market_manager/cmake-build-debug",
-		"source" : "/home/ryan/Documents/market_manager"
+		"build" : "/home/ryan/Documents/cpp_projects/market_manager/cmake-build-debug",
+		"source" : "/home/ryan/Documents/cpp_projects/market_manager"
 	},
 	"version" : 
 	{
