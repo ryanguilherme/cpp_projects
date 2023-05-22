@@ -3,4 +3,4 @@ project(market_manager)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(market_manager main.cpp Account.h Stock.h Item.h MainFunctions.h)
+add_executable(market_manager main.cpp Account.h Stock.h Item.h MainFunctions.h SaveData.h)

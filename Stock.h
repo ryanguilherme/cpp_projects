@@ -3,9 +3,12 @@
 //
 #include "Item.h"
 #include <map>
+#include "lib/json.hpp"
 
 #ifndef MARKET_MANAGER_STOCK_H
 #define MARKET_MANAGER_STOCK_H
+
+using json = nlohmann::json;
 
 class Stock {
 
@@ -22,6 +25,23 @@ public:
     bool removeItem( const std::string& itemName, int volume );
     std::map<std::string, Item> getStockItems();
     std::map<std::string, int> getStockItemsVolume();
+
+    // save data functions
+    [[nodiscard]] json toJson() const {
+        json j;
+        j["size"] = size;
+        j["items"] = items;
+        j["countItems"] = countItems;
+        return j;
+    }
+
+    static Stock fromJson( const json& j ) {
+        Stock stock;
+        stock.size = j["size"].get<int>();
+        stock.items = j["items"].get<std::map<std::string, Item>>();
+        stock.countItems = j["countItems"].get<std::map<std::string, int>>();
+        return stock;
+    }
 
 };
 

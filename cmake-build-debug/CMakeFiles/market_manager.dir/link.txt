@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/market_manager.dir/main.cpp.o -o market_manager 
