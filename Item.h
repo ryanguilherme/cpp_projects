@@ -2,12 +2,9 @@
 // Created by ryan on 16/05/23.
 //
 #include <string>
-#include "lib/json.hpp"
 
 #ifndef ITEM_H
 #define ITEM_H
-
-using json = nlohmann::json;
 
 class Item {
 private:
@@ -24,23 +21,6 @@ public:
     std::string getName();
     double getPrice();
     double getWeight();
-
-    // data functions
-    [[nodiscard]] json toJson() const {
-        json j;
-        j["name"] = name;
-        j["price"] = price;
-        j["weight"] = weight;
-        return j;
-    }
-
-    static Item fromJson( const json& j ) {
-        Item item;
-        item.name = j["name"].get<std::string>();
-        item.price = j["price"].get<double>();
-        item.weight = j["weight"].get<double>();
-        return item;
-    }
 
 };
 

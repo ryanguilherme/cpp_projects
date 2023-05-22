@@ -2,12 +2,9 @@
 // Created by ryan on 16/05/23.
 //
 #include <string>
-#include "lib/json.hpp"
 
 #ifndef ACCOUNT_H
 #define ACCOUNT_H
-
-using json = nlohmann::json;
 
 class Account {
 private:
@@ -21,21 +18,6 @@ public:
     std::string getLogin();
     std::string getPassword();
     bool changePassword(std::string password, std::string newPassword);
-
-    // save data functions
-    [[nodiscard]] json toJson() const {
-        json j;
-        j["login"] = login;
-        j["password"] = password;
-        return j;
-    }
-
-    static Account fromJson( const json& j ) {
-        Account account {"", ""};
-        account.login = j["login"].get<std::string>();
-        account.password = j["password"].get<std::string>();
-        return account;
-    }
 
 };
 
