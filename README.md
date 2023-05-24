@@ -6,19 +6,19 @@
 
 ![demo video](media/market_manager_demo.mp4)
 
-## install and execute (linux)
+## **Install and execution** _(linux)_
 ### Only shell is required to run
 ### Download project files and start application:
 ```bash
-git clone https://github.com/ryanguilherme/cpp_projects.git
-cd cpp_projects/market_manager/cmake-build-debug/
+git clone https://github.com/ryanguilherme/market_manager.git
+cd market_manager/cmake-build-debug
 ./market_manager
 ```
 <hr>
 
 ## **Login Screen**
 ![login screen](media/loginScreen.png)
-### first screen shown after start
+### _First screen shown after start_
 * option 1: _Create Account_ -> asks for a login and password with no requirements, check if the login already exists, if not, create successfully.
 * option 2: _LOGIN_ -> asks for a login and password, first check if the login exists, if exists, check if the password is correct and then authenticate.
 * option 0: _Exit_ -> print "Thank you for using market manager" "Exiting..." and then close the application.
@@ -26,7 +26,7 @@ cd cpp_projects/market_manager/cmake-build-debug/
 
 ## **Main Menu**
 ![menu screen](media/mainMenu.png)
-### First screen shown after login
+### _First screen shown after login_
 * option 1: _Add Item_ -> asks for a item name, price and weight. Check if already exists a item if this name, if not, create successfully.
 * option 2: _Remove Item_ -> ask only for a item name, if exists, remove the item.
 * option 3: _List Items_ -> shows a table with every item registered, with correspondent price and weight (example with a rice and gas item registered)
@@ -38,7 +38,7 @@ cd cpp_projects/market_manager/cmake-build-debug/
 
 ## **Stock Menu**
 ![stock menu](media/stockMenuScreen.png)
-### Stock menu screen, shown after choose **Main menu** option 4 (show stock)
+### _Stock menu screen, shown after choose **Main menu** option 4 (show stock)_
 * option 1: _INCREASE ITEM STOCK- -> list every item registered like on main menu option 3, and then ask the user to choose a item and a volume to add to the stock
 * option 2: _DECREASE ITEM STOCK_ -> show the stock volume and ask for a item and volume to reduce, the item have to be added in the option 1 before
 * option 3: _SHOW STOCK_ -> show the stock screen with item name, price, weight and volume (example with 450 gas and 7600 rices)
