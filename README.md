@@ -3,12 +3,9 @@
 ## Description:
 
 C++ developed application for manage a market system with funccionalities to add items, remove items and add/remove those items to a stock with high volumes, with account authentication.
----
 
 ## Developer(s)
 - [Ryan Guilherme](https://github.com/ryanguilherme)
-
-![demo video](media/market_manager_demo.mp4)
 
 ## **Install and execution** _(linux)_
 ### Only shell is required to run
@@ -100,6 +97,8 @@ Choose an option:
 +--------+------------------------+
 Choose an option:
 ```
+
+![demo video](media/market_manager_demo.mp4)
 
 ### **TO DO**
 ## Move stock implementation from main.cpp to MainFunctions.h, add file system to save data
