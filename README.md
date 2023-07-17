@@ -1,6 +1,7 @@
 # **Market Manager** _0.0.3_
 
 ## Description:
+
 C++ developed application for manage a market system with funccionalities to add items, remove items and add/remove those items to a stock with high volumes, with account authentication.
 ---
 
