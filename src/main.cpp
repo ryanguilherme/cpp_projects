@@ -1,8 +1,8 @@
 #include <iostream>
-#include "lib/Account.h"
-#include "lib/Item.h"
-#include "lib/Stock.h"
-#include "lib/MainFunctions.h"
+#include "../lib/Account.h"
+#include "../lib/Item.h"
+#include "../lib/Stock.h"
+#include "../lib/MainFunctions.h"
 #include <vector>
 
 using namespace std;

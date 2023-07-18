@@ -24,45 +24,4 @@ public:
 
 };
 
-Item::Item() {
-    this->name = "";
-    this->price = 0.0;
-    this->weight = 0.0;
-}
-
-Item::Item(std::string name, double price, double weight) {
-
-    this->name = name;
-    this->price = price;
-    this->weight = weight;
-
-}
-
-bool Item::changePrice(double price) {
-
-    this->price = price;
-    return true;
-
-}
-
-std::string Item::getName() {
-
-    return this->name;
-
-}
-
-double Item::getPrice() {
-
-    return this->price;
-
-}
-
-double Item::getWeight() {
-
-    return this->weight;
-
-}
-
-
-
 #endif //ITEM_H
