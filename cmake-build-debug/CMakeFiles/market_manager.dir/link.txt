@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/market_manager.dir/src/main.cpp.o CMakeFiles/market_manager.dir/src/Account.cpp.o CMakeFiles/market_manager.dir/src/Item.cpp.o CMakeFiles/market_manager.dir/src/Stock.cpp.o CMakeFiles/market_manager.dir/src/MainFunctions.cpp.o -o market_manager 

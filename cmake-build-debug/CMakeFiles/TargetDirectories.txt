@@ -1,3 +1,3 @@
-/home/ryan/Documents/cpp_projects/market_manager/cmake-build-debug/CMakeFiles/market_manager.dir
-/home/ryan/Documents/cpp_projects/market_manager/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/ryan/Documents/cpp_projects/market_manager/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/ryan/Documents/code/market_manager/cmake-build-debug/CMakeFiles/market_manager.dir
+/home/ryan/Documents/code/market_manager/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ryan/Documents/code/market_manager/cmake-build-debug/CMakeFiles/rebuild_cache.dir
